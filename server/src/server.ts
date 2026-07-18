@@ -8,7 +8,7 @@ import { registerSocketHandlers } from "./modules/socket/socket.js"
 //create http server from express app
 const httpServer = http.createServer(app);
 
-//initialize socket.io server
+// Attach socket.io to http server
 const io = new Server(httpServer, {
   cors: {
     origin: env.CLIENT_URL,

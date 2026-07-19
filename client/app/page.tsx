@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { socket } from "@/services/socket/socket";
-import { SocketEvents } from "../../server/src/shared/socket-events.js";
+import { SocketEvents } from "@/shared/socket-events";
 
 export default function Home() {
   useEffect(() => {
@@ -13,7 +13,8 @@ export default function Home() {
     });
 
     socket.on(SocketEvents.ROOM_CREATED, (room) => {
-      console.log(room)
+      console.log("🏠 Room:",room.code);
+      console.log("👥 Players:", room.players);
     })
 
     return () => {

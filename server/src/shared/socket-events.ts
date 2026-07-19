@@ -5,6 +5,8 @@ export const SocketEvents = {
 
     JOIN_ROOM: "join-room",
 
+    ROOM_JOINED: "room-joined",
+
     CREATE_ROOM: "create-room",
 
     ROOM_CREATED: "room-created",
@@ -20,4 +22,6 @@ export const SocketEvents = {
     CHAT_MESSAGE: "chat-message",
 
     GAME_STATE: "game-state",
+
+    ERROR: "error",
 } as const 

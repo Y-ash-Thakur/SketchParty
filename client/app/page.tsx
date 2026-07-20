@@ -1,33 +1,37 @@
-"use client"
+// "use client"
 
-import { useEffect } from "react";
-import { socket } from "@/services/socket/socket";
-import { SocketEvents } from "@/shared/socket-events";
+// import { useEffect } from "react";
+// import { socket } from "@/services/socket/socket";
+// import { SocketEvents } from "@/shared/socket-events";
+
+import Lobby from "@/components/lobby/Lobby";
 
 export default function Home() {
-  useEffect(() => {
-    socket.connect();
 
-    socket.emit(SocketEvents.CREATE_ROOM, {
-      username: "Yash",
-    });
+  return <Lobby/>
+  // useEffect(() => {
+  //   socket.connect();
 
-    socket.on(SocketEvents.ROOM_CREATED, (room) => {
-      console.log("🏠 Room:",room.code);
-      console.log("👥 Players:", room.players);
-    })
+  //   socket.emit(SocketEvents.CREATE_ROOM, {
+  //     username: "Yash",
+  //   });
 
-    return () => {
+  //   socket.on(SocketEvents.ROOM_CREATED, (room) => {
+  //     console.log("🏠 Room:",room.code);
+  //     console.log("👥 Players:", room.players);
+  //   })
 
-      socket.off(SocketEvents.ROOM_CREATED);
+  //   return () => {
 
-      socket.disconnect();
-    };
-  },[]);
+  //     socket.off(SocketEvents.ROOM_CREATED);
 
-  return (
-    <main>
-      <h1>SketchParty</h1>
-    </main>
-  )
+  //     socket.disconnect();
+  //   };
+  // },[]);
+
+  // return (
+  //   <main>
+  //     <h1>SketchParty</h1>
+  //   </main>
+  // )
 }

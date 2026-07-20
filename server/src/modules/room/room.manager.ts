@@ -76,6 +76,7 @@ export class RoomManager {
 
             if(wasHost) {
                 room.players[0].isHost = true;
+                console.log(`👑 Host Transfered ${room.players[0].username}`);
             }
 
             return room;
